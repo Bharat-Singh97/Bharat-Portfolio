@@ -1,0 +1,196 @@
+What are these tools for?
+Tool	     Purpose
+Java JDK	Compiles and runs our Spring Boot backend
+Node.js	    Runs JavaScript tooling for React
+npm	        Installs React libraries and dependencies
+Git	        Tracks changes and uploads our project to GitHub
+
+node -v for node version
+npm -v for npm version
+
+C:\Users\Admin>E:
+
+E:\>mkdir Bharat-portfolio
+
+E:\>cd Bharat-portfolio
+
+E:\Bharat-portfolio>
+
+
+--------------------------------------------------------------------------
+npm create vite@latest frontend -- --template react
+
+
+Command ko samjho:
+- npm create vite@latest — Vite tool se naya frontend project create karta hai.
+- frontend — hamare React folder ka naam.
+- --template react — React ka ready-to-start structure banata hai.
+---------------------------------------------------------------------------------
+
+ESLint select karo. Ye JavaScript/React code mein common mistakes aur code-quality issues identify karne mein help karta hai.
+----------------------------------------------------------------------------------------------------------------------------
+
+Your initial folder structure should look approximately like this:
+E:\Bharat-portfolio
+└── frontend
+    ├── node_modules
+    ├── public
+    ├── src
+    │   ├── App.jsx
+    │   ├── App.css
+    │   ├── index.css
+    │   └── main.jsx
+    ├── package.json
+    └── vite.config.js
+
+
+- src/App.jsx — main React component.
+- src/App.css — styles for the application component.
+- src/index.css — global styles.
+- src/main.jsx — entry point that renders React.
+- package.json — dependencies and commands
+
+-----------------------------------------------------------
+
+Step 1.6 — Understand App.jsx
+Sabse pehle code ke 5 important parts samjho.
+1. Import statements
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
+
+
+Code	Meaning
+useState	React Hook, component mein changing data manage karne ke liye
+heroImg	Image file ko import karke variable mein store karta hai
+reactLogo, viteLogo	Starter page par logos dikhane ke liye
+App.css	Is component ki styling import karta hai
+Portfolio banate waqt hum unused starter images aur imports hata denge.
+2. React component
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      {/* UI goes here */}
+    </>
+  )
+}
+
+
+- function App() ek JavaScript function hai.
+- React mein is tarah ke function ko component kehte hain.
+- return batata hai ki browser mein kaunsa UI render karna hai.
+- <>...</> ek Fragment hai. Ye multiple JSX elements ko group karta hai bina extra HTML element banaye.
+3. State aur counter
+const [count, setCount] = useState(0)
+
+
+Is line ko parts mein samjho:
+- count — current value.
+- setCount — value update karne ka function.
+- useState(0) — initial value 0 rakhta hai.
+Button mein:
+onClick={() => setCount((count) => count + 1)}
+
+
+Button click hone par count ek se badhta hai aur React UI ko update karta hai.
+Portfolio mein hum React state ka use zaroorat ke hisaab se karenge, jaise mobile menu ya interactive components ke liye.
+4. JSX kya hai?
+<h1>Get started</h1>
+<p>Edit src/App.jsx and save to test HMR</p>
+
+
+Ye JSX hai: JavaScript ke andar HTML-jaisa syntax, jisse React UI describe karta hai.
+Dhyan do: JSX mein CSS class dene ke liye className use hota hai, class nahi.
+5. Export
+export default App
+
+
+Isse doosri file, jaise main.jsx, App component ko import karke render kar sakti hai.
+
+Step 1.7 — Tumhari first implementation
+Abhi poora starter code replace karne ki jaldi nahi karenge. Pehle ek chhota practical task.
+App.jsx mein ye line dhoondo:
+<h1>Get started</h1>
+
+
+Ise change karo:
+<h1>Bharat Singh</h1>
+
+
+Phir uske neeche wali paragraph line ko replace karo:
+<p>
+  Aspiring Java Developer | Java Backend Developer | Software Engineer
+</p>
+
+
+Save karne ke liye Ctrl + S press karo aur browser http://localhost:5173/ check karo.
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+index.css — poori website ke global styles, jaise background, default text color aur font.
+
+App.css — portfolio ke specific elements, jaise navbar, hero section, buttons, glass card aur responsive layout.
+
+index.css — global styles: background, font, default text color.
+App.css — portfolio design: navbar, hero section, buttons, glass card, responsive layout.
+
+--------------------------------------------------------------------------------
+Method 1 — Chrome DevTools (Recommended)
+
+Step 1: Website kholo
+Browser mein http://localhost:5173/ open karo.
+
+Step 2: DevTools kholo
+Keyboard par F12 press karo.
+Alternative: Ctrl + Shift + I.
+
+Step 3: Mobile mode enable karo
+DevTools mein phone/tablet jaisa icon dhoondo. Us par click karo.
+Shortcut: Ctrl + Shift + M.
+
+Step 4: Mobile width select karo
+Device dropdown mein koi phone select karo, ya Responsive mode mein width 375 ya 390 pixels set karo.
+
+Method 2 — Browser ko manually chhota karo
+Agar DevTools use nahi karna hai:
+1. Browser ko maximize mode se restore karo.
+2. Browser window ke right edge ko mouse se pakdo.
+3. Left ki taraf drag karke width chhoti karo.
+4. Projects section tak scroll karo.
+Kya verify karna hai?
+Desktop par cards side-by-side honge:
+Gita AI Guide
+
+GM Dashboard
+
+
+Desktop layout · 2 columns
+
+Mobile par cards ek ke neeche ek hone chahiye:
+Gita AI Guide
+Project details and technology tags
+
+GM Dashboard
+Project details and technology tags
+
+Mobile layout · 1 column
+
+Ye CSS rule isi kaam ke liye hai:
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+---------------------------------------------------------------------------------------------
+Ye meta description kya karegi? Ye search engines ko  portfolio ka short introduction deti hai. Google ise search results mein dikha sakta hai.
+============================================================================================================
