@@ -319,9 +319,23 @@ function App() {
         </section>
       </main>
 
-      <footer className="footer">
-        Built with React · Bharat Singh
-      </footer>
+      
+<footer className="footer">
+  <p>
+    Built with React · Bharat Singh Panwar
+  </p>
+
+  <p>
+    Coding Profile:{" "}
+    <a
+      href="https://leetcode.com/u/bharatsinghpanwar/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LeetCode
+    </a>
+  </p>
+</footer>
     </div>
   )
 }
